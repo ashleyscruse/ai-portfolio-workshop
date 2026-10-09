@@ -124,7 +124,7 @@
 <tr><td><code>images/</code></td><td>Your photos and charts, named for what they show.</td></tr>
 </table>
 
-<div class="step"><div class="num">10</div><div>
+<div class="step"><div class="num">05</div><div>
   <h3>Fill your folder (10 minutes)</h3>
   <p><b>a.</b> Open <code>context/about-me.md</code> and fill in what you can. Blanks are fine; the AI will ask.</p>
   <p><b>b.</b> Open <code>context/style.md</code> and change anything you don't like.</p>
@@ -137,49 +137,49 @@
 <h2 id="prompts">Prompts</h2>
 <p class="lead">Copy each one into the chat, in order. Type <code>#</code> in the chat to attach a file by name. When the AI edits a file, read the change, then click <b>Keep</b> or <b>Undo</b>.</p>
 
-<div class="step"><div class="num">1</div><div>
+<div class="step"><div class="num">P1</div><div>
   <h3>Orient</h3>
   <p>Make the AI read before it writes. If its summary is wrong, your files are unclear: fix the file, not the chat.</p>
   <div class="code"><button class="copy">Copy</button><pre><code>Read AGENTS.md and every file in context/ and projects/. In five bullets, tell me what you know about me and what is still missing. Do not write any code yet.</code></pre></div>
 </div></div>
 
-<div class="step"><div class="num">2</div><div>
+<div class="step"><div class="num">P2</div><div>
   <h3>Interview</h3>
   <p>Let the AI fill your gaps by asking you. Your answers end up in a file, so they're saved for every future chat.</p>
   <div class="code"><button class="copy">Copy</button><pre><code>Interview me to fill in what is missing in context/about-me.md. Ask one question at a time and wait for my answer. After five questions, update the file and show me what changed.</code></pre></div>
 </div></div>
 
-<div class="step"><div class="num">3</div><div>
+<div class="step"><div class="num">P3</div><div>
   <h3>Plan</h3>
   <p>Planning is cheap; rebuilding is not. Push back on anything you don't like before it builds.</p>
   <div class="code"><button class="copy">Copy</button><pre><code>Plan a one-page portfolio site that follows context/style.md. List the sections in order and what goes in each, in plain words. Wait for my OK before building anything.</code></pre></div>
 </div></div>
 
-<div class="step"><div class="num">4</div><div>
+<div class="step"><div class="num">P4</div><div>
   <h3>Build</h3>
   <p>Then open it: right-click <code>index.html</code>, choose <b>Reveal in File Explorer</b> (or <b>Reveal in Finder</b>), and double-click it. Refresh the browser after every change.</p>
   <div class="code"><button class="copy">Copy</button><pre><code>Build the site from the plan: index.html and style.css at the top of the repo, following every rule in AGENTS.md. Use only facts from context/ and projects/ and images from images/. Where something is missing, leave a TODO comment and list the TODOs for me at the end.</code></pre></div>
 </div></div>
 
-<div class="step"><div class="num">5</div><div>
+<div class="step"><div class="num">P5</div><div>
   <h3>Feature a project</h3>
   <p>Attach just the file the job needs. Less context, better aim.</p>
-  <div class="code"><button class="copy">Copy</button><pre><code>Make #projects/inspire-2026-fine-tuning.md the featured project. Show the before and after accuracy and the speedup as a short row of numbers, and use the image listed in the file. Change nothing else on the page.</code></pre></div>
+  <div class="code"><button class="copy">Copy</button><pre><code>Make projects/inspire-2026-fine-tuning.md the featured project. Show the before and after accuracy and the speedup as a short row of numbers, and use the image listed in the file. Change nothing else on the page.</code></pre></div>
 </div></div>
 
-<div class="step"><div class="num">6</div><div>
+<div class="step"><div class="num">P6</div><div>
   <h3>Fix one thing</h3>
   <p>Describe what you see and where. You can also paste a screenshot into the chat. One fix per prompt.</p>
   <div class="code"><button class="copy">Copy</button><pre><code>On a phone-sized screen, [describe the problem and where it is]. Fix only that. Tell me which lines you changed.</code></pre></div>
 </div></div>
 
-<div class="step"><div class="num">7</div><div>
+<div class="step"><div class="num">P7</div><div>
   <h3>Remember</h3>
   <p>This is how the AI remembers between chats: decisions go in a file, not in your head.</p>
   <div class="code"><button class="copy">Copy</button><pre><code>Add the decisions we made today (colors, fonts, section order, anything else we settled) to the Decisions section of AGENTS.md, one line each with today's date.</code></pre></div>
 </div></div>
 
-<div class="step"><div class="num">8</div><div>
+<div class="step"><div class="num">P8</div><div>
   <h3>Check</h3>
   <p>Make the AI audit its own work against your rules before the world sees it.</p>
   <div class="code"><button class="copy">Copy</button><pre><code>Review index.html against AGENTS.md. List every rule it breaks and every fact on the page that is not backed by a file in context/ or projects/. Do not fix anything yet; just list them.</code></pre></div>
