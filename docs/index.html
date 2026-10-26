@@ -70,10 +70,10 @@
 </head>
 <body>
 <header><div class="wrap">
-  <div class="kicker">INSPIRE 2026 · STUDENT WORKSHOP</div>
+  <div class="kicker">HANDS-ON WORKSHOP</div>
   <h1>Build Your Portfolio with AI</h1>
   <p>The AI only knows what you give it. Today you build the folder that tells it who you are, then let it write your website.</p>
-  <nav><a href="#prework">Pre-work</a><a href="#setup">Setup</a><a href="#folder">The folder</a><a href="#prompts">Prompts</a><a href="#tips">Context tips</a><a href="#publish">Publish</a></nav>
+  <nav><a href="#prework">Pre-work</a><a href="#setup">Setup</a><a href="#folder">The folder</a><a href="#prompts">Prompts</a><a href="#tips">Context tips</a><a href="#publish">Put it online</a></nav>
 </div></header>
 
 <main class="wrap">
@@ -120,52 +120,38 @@
 <h2 id="setup">Setup</h2>
 
 <div class="step"><div class="num">01</div><div>
-  <h3>Get a GitHub account</h3>
-  <p>If you don't have one, sign up at <code>github.com</code>. Pick a username you'd put on a résumé: it becomes your website address.</p>
+  <h3>Open your folder in Claude</h3>
+  <p>In the Claude desktop app, open the <b>Code</b> tab and choose the <code>portfolio-starter</code> folder you unzipped. Claude can now read and edit the files in it.</p>
 </div></div>
 
 <div class="step"><div class="num">02</div><div>
-  <h3>Copy the starter folder</h3>
-  <p>Go to <code>github.com/ashleyscruse/portfolio-starter</code> and click <b>Use this template</b>, then <b>Create a new repository</b>.</p>
-  <p>Name it exactly <code>your-username.github.io</code> (with your real username) and choose <b>Public</b>. Click <b>Create repository</b>.</p>
-  <div class="heads-up">The name matters. <code>your-username.github.io</code> is what makes it a website.</div>
-</div></div>
-
-<div class="step"><div class="num">03</div><div>
-  <h3>Open it in VS Code</h3>
-  <p>In VS Code, click the <b>Accounts</b> icon (bottom left) and sign in with GitHub.</p>
-  <p>Open the Command Palette (<code>Ctrl+Shift+P</code>, or <code>Cmd+Shift+P</code> on a Mac), type <b>Git: Clone</b>, choose <b>Clone from GitHub</b>, and pick your new repository. Save it somewhere you'll find it, then click <b>Open</b>.</p>
-</div></div>
-
-<div class="step"><div class="num">04</div><div>
-  <h3>Open the AI chat</h3>
-  <p>Click the chat icon at the top of VS Code (or <code>Ctrl+Alt+I</code> / <code>Cmd+Ctrl+I</code>). Sign in to GitHub Copilot if asked; the free plan is enough for today.</p>
-  <p>In the chat box, set the mode dropdown to <b>Agent</b>. Agent mode can read and edit the files in your folder.</p>
+  <h3>Start your preview</h3>
+  <p>Paste this, then open the address Claude gives you in your browser. Keep that tab open: it updates every time Claude changes a file.</p>
+  <div class="code"><button class="copy">Copy</button><pre><code>Run npm install and then npm run dev in this folder. Leave it running and tell me the address to open in my browser.</code></pre></div>
 </div></div>
 
 <h2 id="folder">The folder</h2>
 <p class="lead">A good AI session starts before you type a prompt. This folder is the AI's memory: anything written here, you never have to explain again.</p>
 <table class="fields">
 <tr><th>File</th><th>What it does</th></tr>
-<tr><td><code>AGENTS.md</code></td><td>Standing instructions. The AI reads it first, every time: what the project is, where things are, the rules. Read it now; you can change any rule.</td></tr>
+<tr><td><code>AGENTS.md</code></td><td>Standing instructions: what the project is, where things are, the rules. Read it now; you can change any rule.</td></tr>
 <tr><td><code>context/about-me.md</code></td><td>Facts about you. The AI is told to use only these, so it can't make things up.</td></tr>
 <tr><td><code>context/style.md</code></td><td>How the site should look and sound.</td></tr>
-<tr><td><code>projects/</code></td><td>One file per project, all the same shape. Yesterday's fine-tuning project is already started for you.</td></tr>
+<tr><td><code>projects/</code></td><td>One file per project, all the same shape. Copy <code>_template.md</code> for each new one.</td></tr>
 <tr><td><code>images/</code></td><td>Your photos and charts, named for what they show.</td></tr>
 </table>
 
-<div class="step"><div class="num">05</div><div>
+<div class="step"><div class="num">03</div><div>
   <h3>Fill your folder (10 minutes)</h3>
-  <p><b>a.</b> Open <code>context/about-me.md</code> and fill in what you can. Blanks are fine; the AI will ask.</p>
+  <p><b>a.</b> Open <code>context/about-me.md</code> and fill in what you can, using the bio from your pre-work. Blanks are fine; the AI will ask.</p>
   <p><b>b.</b> Open <code>context/style.md</code> and change anything you don't like.</p>
-  <p><b>c.</b> Open <code>projects/inspire-2026-fine-tuning.md</code> and fill in your numbers from yesterday.</p>
-  <p><b>d.</b> Drag a headshot or a screenshot into <code>images/</code>. Rename it for what it shows.</p>
-  <p><b>e.</b> Got another project (a poster, a class project, a summer program)? Copy <code>projects/_template.md</code>, rename it, and fill it in.</p>
+  <p><b>c.</b> For each project, copy <code>projects/_template.md</code>, rename it for the project (like <code>projects/water-quality-poster.md</code>), and fill it in.</p>
+  <p><b>d.</b> Drag your headshot and project images into <code>images/</code>. Rename each for what it shows.</p>
   <div class="heads-up">This is a public website. No phone number, home address, student ID, or birthday.</div>
 </div></div>
 
 <h2 id="prompts">Prompts</h2>
-<p class="lead">Copy each one into the chat, in order. Type <code>#</code> in the chat to attach a file by name. When the AI edits a file, read the change, then click <b>Keep</b> or <b>Undo</b>.</p>
+<p class="lead">Copy each one into Claude, in order. Type <code>@</code> to point at a file by name. When Claude wants to change a file, read what it's changing before you approve.</p>
 
 <div class="step"><div class="num">P1</div><div>
   <h3>Orient</h3>
@@ -187,14 +173,14 @@
 
 <div class="step"><div class="num">P4</div><div>
   <h3>Build</h3>
-  <p>Then open it: right-click <code>index.html</code>, choose <b>Reveal in File Explorer</b> (or <b>Reveal in Finder</b>), and double-click it. Refresh the browser after every change.</p>
-  <div class="code"><button class="copy">Copy</button><pre><code>Build the site from the plan: index.html and style.css at the top of the repo, following every rule in AGENTS.md. Use only facts from context/ and projects/ and images from images/. Where something is missing, leave a TODO comment and list the TODOs for me at the end.</code></pre></div>
+  <p>Watch your preview tab: the site appears as Claude writes it.</p>
+  <div class="code"><button class="copy">Copy</button><pre><code>Build the site from the plan: index.html and style.css at the top of the folder, following every rule in AGENTS.md. Use only facts from context/ and projects/ and images from images/. Where something is missing, leave a TODO comment and list the TODOs for me at the end.</code></pre></div>
 </div></div>
 
 <div class="step"><div class="num">P5</div><div>
   <h3>Feature a project</h3>
-  <p>Attach just the file the job needs. Less context, better aim.</p>
-  <div class="code"><button class="copy">Copy</button><pre><code>Make projects/inspire-2026-fine-tuning.md the featured project. Show the before and after accuracy and the speedup as a short row of numbers, and use the image listed in the file. Change nothing else on the page.</code></pre></div>
+  <p>Point at just the file the job needs. Less context, better aim.</p>
+  <div class="code"><button class="copy">Copy</button><pre><code>Make @projects/[your-project].md the featured project. Show its key results as a short row of numbers or highlights, and use the image listed in the file. Change nothing else on the page.</code></pre></div>
 </div></div>
 
 <div class="step"><div class="num">P6</div><div>
@@ -216,53 +202,39 @@
 </div></div>
 
 <h2 id="tips">Context tips</h2>
-<p class="lead">Researchers and engineers who get great results from AI aren't better at typing prompts. They're better at organizing what the AI reads.</p>
+<p class="lead">People who get great results from AI aren't better at typing prompts. They're better at organizing what the AI reads.</p>
 <ol class="tips">
 <li><b>Write it down once, point to it forever.</b> If you've typed the same explanation twice, it belongs in a file.</li>
 <li><b>Same shape every time.</b> Every project file has the same headings, so the AI (and you) can find anything.</li>
-<li><b>Name things for what they are.</b> <code>vista-scaling-chart.png</code> tells the AI what it is. <code>IMG_2041.png</code> tells it nothing.</li>
-<li><b>Attach only what the job needs.</b> More context isn't better; the right context is. Use <code>#</code> to point at one or two files.</li>
-<li><b>One job per chat.</b> When the AI gets confused or starts going in circles, click <b>+</b> for a new chat. It rereads <code>AGENTS.md</code> and starts clean.</li>
+<li><b>Name things for what they are.</b> <code>water-quality-chart.png</code> tells the AI what it is. <code>IMG_2041.png</code> tells it nothing.</li>
+<li><b>Point only at what the job needs.</b> More context isn't better; the right context is. Use <code>@</code> to point at one or two files.</li>
+<li><b>One job per chat.</b> When the AI gets confused or starts going in circles, start a new session. It rereads your files and starts clean.</li>
 <li><b>Plan, then build.</b> Ask for the plan first. Fixing a plan takes one sentence; fixing a website takes ten prompts.</li>
 <li><b>Make it ask, not guess.</b> "Ask me" and "leave a TODO" are the two most useful phrases you have.</li>
 <li><b>Save decisions to a file.</b> The chat forgets. <code>AGENTS.md</code> doesn't.</li>
-<li><b>Read before you Keep.</b> You're the editor. If you can't explain a change, ask the AI to explain it or click Undo.</li>
-<li><b>Save points.</b> When something works, commit it (below). If the next change breaks everything, you can go back.</li>
+<li><b>Read before you approve.</b> You're the editor. If you can't explain a change, ask the AI to explain it or undo it.</li>
+<li><b>Save points.</b> When something works, make a copy of your folder. If the next change breaks everything, you can go back.</li>
 </ol>
 
-<h2 id="publish">Publish</h2>
-
-<div class="step"><div class="num">01</div><div>
-  <h3>Commit and push</h3>
-  <p>Click the <b>Source Control</b> icon on the left (it looks like a branch). Type a message like <code>First version of my site</code>, click <b>Commit</b>, then <b>Sync Changes</b>. If it asks to stage all changes, click <b>Yes</b>.</p>
-</div></div>
-
-<div class="step"><div class="num">02</div><div>
-  <h3>Check Pages is on</h3>
-  <p>On GitHub, open your repository, then <b>Settings → Pages</b>. Under <b>Branch</b>, choose <code>main</code> and <code>/ (root)</code>, then <b>Save</b>.</p>
-</div></div>
-
-<div class="step"><div class="num">03</div><div>
-  <h3>Visit your site</h3>
-  <p>After a minute or two, go to <code>https://your-username.github.io</code>. Every time you commit and sync, it updates.</p>
-</div></div>
+<h2 id="publish">Put it online (optional)</h2>
+<p class="lead">Your site works on your computer today. When you're ready to share it, a free GitHub account puts it on the web. Paste this into Claude:</p>
+<div class="code"><button class="copy">Copy</button><pre><code>I want to publish this folder as a free website with GitHub Pages. I [have / don't have] a GitHub account. Walk me through it one step at a time, and wait for me to say "done" before each next step.</code></pre></div>
 
 <h2>Stuck?</h2>
 <table class="fields">
 <tr><th>Problem</th><th>Fix</th></tr>
-<tr><td>AI can't edit files</td><td>Set the chat mode dropdown to <b>Agent</b>.</td></tr>
+<tr><td>No Code tab in Claude</td><td>Check you're signed in to a Pro plan or higher, and that the app is up to date.</td></tr>
+<tr><td><code>npm</code> not found</td><td>Node.js isn't installed. Go back to Pre-work step 03, then restart the Claude app.</td></tr>
+<tr><td>Preview page won't load</td><td>Ask Claude: "Is npm run dev still running? Restart it and give me the address."</td></tr>
 <tr><td>AI invented a fact</td><td>Tell it which fact, and point it to rule 1 in <code>AGENTS.md</code>. Then add the real fact to <code>context/</code>.</td></tr>
-<tr><td>Site shows 404</td><td>Wait two minutes. Then check the repo name is exactly <code>your-username.github.io</code> and Pages is set to <code>main</code>, <code>/ (root)</code>.</td></tr>
-<tr><td>Site shows the README, not my page</td><td><code>index.html</code> isn't at the top of the repo, or it wasn't committed.</td></tr>
-<tr><td>Ran out of free chat requests</td><td>Raise your hand; pair with a neighbor for the rest of the session.</td></tr>
-<tr><td>Everything broke</td><td>Ask the AI to undo its last change, or in Source Control, discard the changes since your last commit.</td></tr>
+<tr><td>Everything broke</td><td>Ask the AI to undo its last change, or go back to your last saved copy of the folder.</td></tr>
 </table>
 
 <h2>After today</h2>
-<p>Every time you finish something (a poster, a class project, a research summer), copy <code>projects/_template.md</code>, fill it in, and ask the AI to add it to your site. Five minutes, and your portfolio grows with you.</p>
+<p>Every time you finish something (a poster, a class project, a summer program), copy <code>projects/_template.md</code>, fill it in, and ask the AI to add it to your site. Five minutes, and your portfolio grows with you.</p>
 
 </main>
-<footer><div class="wrap">INSPIRE 2026 · Student Workshop</div></footer>
+<footer><div class="wrap">Build Your Portfolio with AI</div></footer>
 <script>
   document.querySelectorAll('.copy').forEach(function (b) {
     b.addEventListener('click', function () {
