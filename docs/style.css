@@ -57,6 +57,8 @@ code { font: 13px/1.5 var(--mono); background: var(--lilac); border: 1px solid v
 .copy { position: absolute; top: 10px; right: 10px; background: var(--merlot); color: #fff; border: 0; cursor: pointer;
   font: 500 12px var(--body); letter-spacing: 1.5px; text-transform: uppercase; padding: 7px 14px; }
 .copy:hover { background: var(--muted); }
+.shot { margin: 14px 0 8px; }
+.shot img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); }
 .heads-up { border-left: 2px solid var(--merlot); padding: 4px 0 4px 16px; margin: 14px 0 4px; font-size: 16px; }
 
 /* Tables and lists */
