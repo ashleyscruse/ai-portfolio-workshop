@@ -1,0 +1,90 @@
+/* Ashley Scruse brand kit, register B (academic): ruby lead band over white.
+   Orchid, petal, and Caveat are off; ruby appears once on white (the step numerals). */
+:root {
+  --merlot: #2c0415; --ruby: #b5123f; --pale: #f3c9d4;
+  --lilac: #f8f2f6; --white: #fff; --ink: #2c0415; --muted: #6e4a5a; --line: #e7d8e1;
+  --display: "Space Grotesk", Arial, sans-serif; --body: "Outfit", Arial, sans-serif;
+  --mono: "Space Mono", Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--white); color: var(--ink); font: 400 17px/1.7 var(--body); overflow-wrap: anywhere; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+a { color: var(--merlot); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+/* Hero */
+.hero { background: var(--ruby); color: #fff; padding: 72px 0 64px; position: relative; overflow: hidden; }
+.hero .mark { position: absolute; right: -30px; bottom: -40px; width: 240px; height: auto; opacity: .18; pointer-events: none; }
+.hero .wrap { position: relative; }
+.eyebrow { font: 700 11px/1.5 var(--display); letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin: 0; }
+.hero .eyebrow, .hero .script { color: var(--pale); }
+.script { font: 400 16px/1.5 var(--mono); letter-spacing: .5px; color: var(--muted); margin: 18px 0 10px; }
+h1 { font: 700 clamp(40px, 7vw, 60px)/1.0 var(--display); letter-spacing: -2px; text-transform: uppercase; margin: 0 0 22px; max-width: 12em; }
+h1 span { display: block; }
+.hero p.intro { color: #fff; max-width: 34em; margin: 0; }
+.hero .aside { margin-top: 28px; font-size: 15px; color: #fff; }
+.hero .aside a { color: #fff; }
+
+/* Tabs */
+.tabs { position: sticky; top: 0; z-index: 5; background: var(--white); border-bottom: 1px solid var(--line); }
+.tabs .wrap { display: flex; gap: 4px; overflow-x: auto; }
+.tabs button { background: none; border: 0; border-bottom: 2px solid transparent; padding: 16px 12px 14px; cursor: pointer;
+  font: 500 13px var(--body); letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.tabs button:hover { color: var(--merlot); }
+.tabs button[aria-selected="true"] { color: var(--merlot); border-bottom-color: var(--merlot); }
+.js .panel[hidden] { display: none; }
+
+/* Section heads */
+section.panel { padding: 56px 0 24px; }
+.panel .script { margin: 0 0 8px; }
+h2 { font: 700 clamp(30px, 5vw, 44px)/1.05 var(--display); letter-spacing: -1.5px; text-transform: uppercase; margin: 0 0 14px; }
+.lead { color: var(--muted); max-width: 40em; margin: 0 0 18px; }
+
+/* Steps, list-tile style */
+.step { display: grid; grid-template-columns: 72px 1fr; gap: 16px; padding: 28px 0; border-top: 1px solid var(--line); }
+.step:last-of-type { border-bottom: 1px solid var(--line); }
+.num { font: 700 40px/1 var(--display); letter-spacing: -1.5px; color: var(--ruby); }
+.step > div { min-width: 0; }
+h3 { font: 700 22px/1.25 var(--display); letter-spacing: -0.5px; margin: 2px 0 6px; }
+.step p { margin: 6px 0; }
+code { font: 13px/1.5 var(--mono); background: var(--lilac); border: 1px solid var(--line); padding: 1px 6px; }
+
+/* Prompt cards */
+.code { position: relative; margin: 14px 0 6px; background: var(--lilac); border: 1px solid var(--line); padding: 44px 20px 18px; }
+.code::before { content: "Prompt"; position: absolute; top: 14px; left: 20px; font: 700 10px var(--display); letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.code pre { margin: 0; white-space: pre-wrap; font: 400 16px/1.65 var(--body); color: var(--ink); }
+.code pre code { background: none; border: 0; padding: 0; font: inherit; }
+.copy { position: absolute; top: 10px; right: 10px; background: var(--merlot); color: #fff; border: 0; cursor: pointer;
+  font: 500 12px var(--body); letter-spacing: 1.5px; text-transform: uppercase; padding: 7px 14px; }
+.copy:hover { background: var(--muted); }
+.heads-up { border-left: 2px solid var(--merlot); padding: 4px 0 4px 16px; margin: 14px 0 4px; font-size: 16px; }
+
+/* Tables and lists */
+table { width: 100%; border-collapse: collapse; margin: 10px 0 24px; font-size: 16px; }
+th, td { text-align: left; padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 700 10px var(--display); letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+td:first-child { white-space: nowrap; }
+b { font-weight: 500; }
+td code { overflow-wrap: normal; white-space: nowrap; }
+.tips { list-style: none; counter-reset: t; padding: 0; margin: 0; }
+.tips li { counter-increment: t; display: grid; grid-template-columns: 56px 1fr; padding: 16px 0; border-top: 1px solid var(--line); }
+.tips li::before { content: counter(t, decimal-leading-zero); font: 700 22px/1.4 var(--display); color: var(--merlot); }
+.tips b { display: block; }
+.next { display: inline-block; margin-top: 28px; background: none; border: 1px solid var(--merlot); color: var(--merlot); cursor: pointer;
+  font: 500 13px var(--body); letter-spacing: 1.5px; text-transform: uppercase; padding: 11px 18px; }
+.next:hover { background: var(--merlot); color: #fff; }
+
+/* Footer */
+footer { margin-top: 64px; border-top: 1px solid var(--line); padding: 32px 0 48px; }
+footer .script { margin: 0 0 4px; }
+footer .meta { font: 700 10px/1.8 var(--display); letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+footer .meta a { color: var(--merlot); text-decoration: none; }
+
+@media (max-width: 600px) {
+  .hero { padding: 48px 0 44px; }
+  .hero .mark { width: 160px; right: -30px; bottom: -30px; }
+  .step { grid-template-columns: 1fr; gap: 6px; }
+  .num { font-size: 30px; }
+  td:first-child { white-space: normal; }
+  td code { font-size: 12px; }
+}

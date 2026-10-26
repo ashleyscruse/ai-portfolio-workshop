@@ -3,122 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Build Your Portfolio with AI</title>
-<style>
-  :root {
-    --maroon: #840028; --gold: #c1a231; --ink: #1a1a1a; --ink2: #4a4a4a;
-    --light: #f4f1f2; --line: #e2dade; --bg: #ffffff; --code-bg: #1d1416; --code-ink: #f6eef0;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--ink);
-         font: 20px/1.55 Georgia, "Times New Roman", serif; }
-  header { background: var(--maroon); color: #fff; padding: 48px 16px 40px; }
-  .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
-  .kicker { color: var(--gold); font: 700 15px/1.2 Arial, Helvetica, sans-serif; letter-spacing: .12em; }
-  h1 { font: 700 clamp(34px, 6vw, 56px)/1.05 Arial, Helvetica, sans-serif; text-transform: uppercase;
-       margin: 12px 0 14px; }
-  header p { margin: 0; font-size: 22px; }
-  nav { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
-  nav a { color: #fff; border: 2px solid var(--gold); padding: 8px 16px; text-decoration: none;
-          font: 700 16px Arial, Helvetica, sans-serif; }
-  nav a:hover { background: var(--gold); color: var(--maroon); }
-  h2 { font: 700 30px/1.2 Arial, Helvetica, sans-serif; color: var(--maroon); text-transform: uppercase;
-       margin: 56px 0 6px; }
-  h2::after { content: ""; display: block; width: 72px; height: 6px; background: var(--gold); margin-top: 12px; }
-  .lead { color: var(--ink2); margin: 16px 0 8px; }
-  .step { display: grid; grid-template-columns: 64px 1fr; gap: 18px; background: var(--light);
-          border-left: 6px solid var(--maroon); padding: 22px 24px; margin: 18px 0; }
-  .num { font: 700 40px/1 Arial, Helvetica, sans-serif; color: var(--gold); }
-  .step h3 { font: 700 24px/1.25 Arial, Helvetica, sans-serif; color: var(--maroon); margin: 2px 0 8px; }
-  .step p { margin: 8px 0; }
-  .step > div { min-width: 0; }
-  code { font: 18px/1.5 Menlo, Consolas, monospace; background: #ece4e7; padding: 1px 6px; }
-  .code { position: relative; margin: 12px 0 4px; }
-  pre { background: var(--code-bg); color: var(--code-ink); margin: 0; padding: 46px 20px 18px;
-        overflow-x: auto; font: 17px/1.55 Menlo, Consolas, monospace; }
-  pre code { background: none; padding: 0; font: inherit; }
-  .copy { position: absolute; top: 10px; right: 10px; background: var(--gold); color: var(--maroon);
-          border: 0; font: 700 14px Arial, Helvetica, sans-serif; padding: 6px 12px; cursor: pointer; }
-  .note { background: var(--maroon); color: #fff; padding: 18px 24px; margin: 22px 0;
-          border-left: 6px solid var(--gold); }
-  .note b { color: var(--gold); font-family: Arial, Helvetica, sans-serif; letter-spacing: .06em; }
-  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 19px; }
-  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  th { font: 700 16px Arial, Helvetica, sans-serif; color: var(--maroon); text-transform: uppercase;
-       letter-spacing: .05em; }
-  figure { margin: 14px 0 18px; }
-  figure img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); background: #fff; }
-  figcaption { font: 15px/1.4 Arial, Helvetica, sans-serif; color: var(--ink2); margin-top: 6px; }
-  .sub { border-top: 1px solid var(--line); padding-top: 14px; margin-top: 16px; }
-  .sub h4 { font: 700 20px/1.3 Arial, Helvetica, sans-serif; color: var(--maroon); margin: 0 0 6px; }
-  .heads-up { background: #fff; border: 2px solid var(--gold); padding: 12px 16px; margin: 12px 0; font-size: 18px; }
-  footer { margin-top: 64px; padding: 26px 16px; background: var(--light); color: var(--ink2);
-           font: 700 13px Arial, Helvetica, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
-  .fields td:first-child { white-space: nowrap; font-weight: bold; }
-  @media (max-width: 600px) {
-    .fields td:first-child { white-space: normal; }
-    body { font-size: 18px; }
-    .step { grid-template-columns: 1fr; gap: 4px; padding: 18px; }
-    .num { font-size: 30px; }
-  }
-  .prompt-label { font: 700 15px/1.2 Arial, Helvetica, sans-serif; color: var(--ink2); letter-spacing: .08em; text-transform: uppercase; margin-top: 14px; }
-  pre { white-space: pre-wrap; }
-  .tips li { margin: 10px 0; }
-  body { overflow-wrap: anywhere; }
-  table { width: 100%; }
-</style>
+<title>Build your portfolio with AI</title>
+<meta name="description" content="A hands-on workshop: build a personal portfolio site with Claude.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Space+Grotesk:wght@700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><div class="wrap">
-  <div class="kicker">HANDS-ON WORKSHOP</div>
-  <h1>Build Your Portfolio with AI</h1>
-  <p>The AI only knows what you give it. Today you build the folder that tells it who you are, then let it write your website.</p>
-  <nav><a href="#prework">Pre-work</a><a href="#setup">Setup</a><a href="#folder">The folder</a><a href="#prompts">Prompts</a><a href="#tips">Context tips</a><a href="#publish">Put it online</a></nav>
+<header class="hero"><img class="mark" src="as-mark-white.svg" alt=""><div class="wrap">
+  <p class="eyebrow">Hands-on workshop</p>
+  <p class="script">Your site, built by you.</p>
+  <h1>Build your portfolio <span>with AI.</span></h1>
+  <p class="intro">The AI only knows what you give it. Today you build the folder that tells it who you are, then let it write your website.</p>
+  <p class="aside">Haven't done the pre-work? <a href="prework.html">Start here</a>.</p>
 </div></header>
-
+<nav class="tabs" role="tablist" aria-label="Workshop sections"><div class="wrap">
+    <button role="tab" id="tab-setup" aria-controls="setup" aria-selected="false">Setup</button>
+    <button role="tab" id="tab-folder" aria-controls="folder" aria-selected="false">The folder</button>
+    <button role="tab" id="tab-prompts" aria-controls="prompts" aria-selected="false">Prompts</button>
+    <button role="tab" id="tab-tips" aria-controls="tips" aria-selected="false">Context tips</button>
+    <button role="tab" id="tab-publish" aria-controls="publish" aria-selected="false">Put it online</button>
+    <button role="tab" id="tab-stuck" aria-controls="stuck" aria-selected="false">Stuck?</button>
+</div></nav>
 <main class="wrap">
-
-<h2 id="prework">Pre-work</h2>
-<p class="lead">Do this before the session, about 20 minutes. Once Claude is installed, you don't have to figure out the rest yourself: copy each prompt into Claude and let it walk you through.</p>
-
-<div class="step"><div class="num">01</div><div>
-  <h3>Get a paid Claude account</h3>
-  <p>Go to <a href="https://claude.ai"><code>claude.ai</code></a> and sign up for the <b>Pro</b> plan or higher. The free plan doesn't include the coding tool we use.</p>
-</div></div>
-
-<div class="step"><div class="num">02</div><div>
-  <h3>Install the Claude desktop app</h3>
-  <p>Download it from <a href="https://claude.ai/download"><code>claude.ai/download</code></a>, install it, and sign in. Stuck? Paste this into a chat at <a href="https://claude.ai"><code>claude.ai</code></a>:</p>
-  <div class="code"><button class="copy">Copy</button><pre><code>I'm on a [Mac / Windows] computer. Walk me through downloading, installing, and signing in to the Claude desktop app, one step at a time. Wait for me to say "done" before giving the next step.</code></pre></div>
-</div></div>
-
-<div class="step"><div class="num">03</div><div>
-  <h3>Install Node.js</h3>
-  <p>Node.js is what lets you preview your site on your own computer. Paste this into a chat in the Claude app:</p>
-  <div class="code"><button class="copy">Copy</button><pre><code>I'm on a [Mac / Windows] computer and I've never installed developer tools. Walk me through installing the LTS version of Node.js from nodejs.org, one step at a time, and wait for me to say "done" before each next step. Then show me how to check that it worked.</code></pre></div>
-</div></div>
-
-<div class="step"><div class="num">04</div><div>
-  <h3>Download the starter folder</h3>
-  <p>Go to <a href="https://github.com/ashleyscruse/portfolio-starter"><code>github.com/ashleyscruse/portfolio-starter</code></a>, click the green <b>Code</b> button, then <b>Download ZIP</b>. Unzip it somewhere easy to find, like your Desktop. You don't need a GitHub account.</p>
-</div></div>
-
-<div class="step"><div class="num">05</div><div>
-  <h3>Test it in the Code tab</h3>
-  <p>In the Claude app, open the <b>Code</b> tab and choose your unzipped <code>portfolio-starter</code> folder. Then paste:</p>
-  <div class="code"><button class="copy">Copy</button><pre><code>Check that Node.js and npm are installed and tell me the versions. Then run npm install and npm run dev in this folder, and tell me the address to open in my browser. Do not change any files. If anything fails, explain it in plain words and tell me what to do.</code></pre></div>
-  <div class="heads-up">If you see a page in your browser, you're ready. Leave the rest for the session.</div>
-</div></div>
-
-<div class="step"><div class="num">06</div><div>
-  <h3>Gather your material</h3>
-  <p>Put a headshot and any project images or charts in one folder. Then paste this into a chat to pull together the words:</p>
-  <div class="code"><button class="copy">Copy</button><pre><code>I'm building a portfolio website. Interview me, one question at a time, about who I am and two or three projects I'd want to show (class work, research, posters, internships). After my answers, give me a short bio and a few sentences on each project that I can save and bring to the workshop.</code></pre></div>
-  <div class="heads-up">This is a public website. No phone number, home address, student ID, or birthday.</div>
-</div></div>
-
-<h2 id="setup">Setup</h2>
-
+<section class="panel" id="setup" role="tabpanel" aria-labelledby="tab-setup">
+  <p class="script">Ten minutes.</p>
+  <h2>Open your folder.</h2>
+  <p class="lead">Your folder from the pre-work, opened in Claude, with a live preview running.</p>
 <div class="step"><div class="num">01</div><div>
   <h3>Open your folder in Claude</h3>
   <p>In the Claude desktop app, open the <b>Code</b> tab and choose the <code>portfolio-starter</code> folder you unzipped. Claude can now read and edit the files in it.</p>
@@ -129,9 +41,12 @@
   <p>Paste this, then open the address Claude gives you in your browser. Keep that tab open: it updates every time Claude changes a file.</p>
   <div class="code"><button class="copy">Copy</button><pre><code>Run npm install and then npm run dev in this folder. Leave it running and tell me the address to open in my browser.</code></pre></div>
 </div></div>
-
-<h2 id="folder">The folder</h2>
-<p class="lead">A good AI session starts before you type a prompt. This folder is the AI's memory: anything written here, you never have to explain again.</p>
+  <button class="next" data-go="folder">Next: The folder →</button>
+</section>
+<section class="panel" id="folder" role="tabpanel" aria-labelledby="tab-folder">
+  <p class="script">Context first.</p>
+  <h2>Check your folder.</h2>
+  <p class="lead">A good AI session starts before you type a prompt. This folder is the AI's memory: anything written here, you never have to explain again.</p>
 <table class="fields">
 <tr><th>File</th><th>What it does</th></tr>
 <tr><td><code>AGENTS.md</code></td><td>Standing instructions: what the project is, where things are, the rules. Read it now; you can change any rule.</td></tr>
@@ -142,17 +57,18 @@
 </table>
 
 <div class="step"><div class="num">03</div><div>
-  <h3>Fill your folder (10 minutes)</h3>
-  <p><b>a.</b> Open <code>context/about-me.md</code> and fill in what you can, using the bio from your pre-work. Blanks are fine; the AI will ask.</p>
+  <h3>Check your folder (5 minutes)</h3>
+  <p><b>a.</b> Open <code>context/about-me.md</code> and read what you and Claude wrote in the pre-work. Fix anything that's wrong.</p>
   <p><b>b.</b> Open <code>context/style.md</code> and change anything you don't like.</p>
-  <p><b>c.</b> For each project, copy <code>projects/_template.md</code>, rename it for the project (like <code>projects/water-quality-poster.md</code>), and fill it in.</p>
-  <p><b>d.</b> Drag your headshot and project images into <code>images/</code>. Rename each for what it shows.</p>
-  <div class="heads-up">This is a public website. No phone number, home address, student ID, or birthday.</div>
+  <p><b>c.</b> Make sure <code>projects/</code> has at least one project file and <code>images/</code> has your headshot.</p>
+  <div class="heads-up">Skipped the pre-work? In the Code tab, paste <code>Read SETUP.md and walk me through it, one question at a time.</code> and Claude will fill your folder with you.</div>
 </div></div>
-
-<h2 id="prompts">Prompts</h2>
-<p class="lead">Copy each one into Claude, in order. Type <code>@</code> to point at a file by name. When Claude wants to change a file, read what it's changing before you approve.</p>
-
+  <button class="next" data-go="prompts">Next: Prompts →</button>
+</section>
+<section class="panel" id="prompts" role="tabpanel" aria-labelledby="tab-prompts">
+  <p class="script">In this order.</p>
+  <h2>Eight prompts.</h2>
+  <p class="lead">Copy each one into Claude, in order. Type <code>@</code> to point at a file by name. When Claude wants to change a file, read what it's changing before you approve.</p>
 <div class="step"><div class="num">P1</div><div>
   <h3>Orient</h3>
   <p>Make the AI read before it writes. If its summary is wrong, your files are unclear: fix the file, not the chat.</p>
@@ -200,9 +116,12 @@
   <p>Make the AI audit its own work against your rules before the world sees it.</p>
   <div class="code"><button class="copy">Copy</button><pre><code>Review index.html against AGENTS.md. List every rule it breaks and every fact on the page that is not backed by a file in context/ or projects/. Do not fix anything yet; just list them.</code></pre></div>
 </div></div>
-
-<h2 id="tips">Context tips</h2>
-<p class="lead">People who get great results from AI aren't better at typing prompts. They're better at organizing what the AI reads.</p>
+  <button class="next" data-go="tips">Next: Context tips →</button>
+</section>
+<section class="panel" id="tips" role="tabpanel" aria-labelledby="tab-tips">
+  <p class="script">Worth keeping.</p>
+  <h2>How to get good results.</h2>
+  <p class="lead">People who get great results from AI aren't better at typing prompts. They're better at organizing what the AI reads.</p>
 <ol class="tips">
 <li><b>Write it down once, point to it forever.</b> If you've typed the same explanation twice, it belongs in a file.</li>
 <li><b>Same shape every time.</b> Every project file has the same headings, so the AI (and you) can find anything.</li>
@@ -215,12 +134,21 @@
 <li><b>Read before you approve.</b> You're the editor. If you can't explain a change, ask the AI to explain it or undo it.</li>
 <li><b>Save points.</b> When something works, make a copy of your folder. If the next change breaks everything, you can go back.</li>
 </ol>
-
-<h2 id="publish">Put it online (optional)</h2>
-<p class="lead">Your site works on your computer today. When you're ready to share it, a free GitHub account puts it on the web. Paste this into Claude:</p>
+  <button class="next" data-go="publish">Next: Put it online →</button>
+</section>
+<section class="panel" id="publish" role="tabpanel" aria-labelledby="tab-publish">
+  <p class="script">When you're ready.</p>
+  <h2>Share your site.</h2>
+  <p class="lead">Your site works on your computer today. When you're ready to share it, a free GitHub account puts it on the web.</p>
 <div class="code"><button class="copy">Copy</button><pre><code>I want to publish this folder as a free website with GitHub Pages. I [have / don't have] a GitHub account. Walk me through it one step at a time, and wait for me to say "done" before each next step.</code></pre></div>
-
-<h2>Stuck?</h2>
+<h3 style="margin-top:36px">After today</h3>
+<p>Every time you finish something (a poster, a class project, a summer program), copy <code>projects/_template.md</code>, fill it in, and ask the AI to add it to your site. Five minutes, and your portfolio grows with you.</p>
+  <button class="next" data-go="stuck">Next: Stuck? →</button>
+</section>
+<section class="panel" id="stuck" role="tabpanel" aria-labelledby="tab-stuck">
+  <p class="script">It happens.</p>
+  <h2>Quick fixes.</h2>
+  <p class="lead">Find your problem, try the fix, then ask Claude if it's still not working.</p>
 <table class="fields">
 <tr><th>Problem</th><th>Fix</th></tr>
 <tr><td>No Code tab in Claude</td><td>Check you're signed in to a Pro plan or higher, and that the app is up to date.</td></tr>
@@ -229,24 +157,39 @@
 <tr><td>AI invented a fact</td><td>Tell it which fact, and point it to rule 1 in <code>AGENTS.md</code>. Then add the real fact to <code>context/</code>.</td></tr>
 <tr><td>Everything broke</td><td>Ask the AI to undo its last change, or go back to your last saved copy of the folder.</td></tr>
 </table>
-
-<h2>After today</h2>
-<p>Every time you finish something (a poster, a class project, a summer program), copy <code>projects/_template.md</code>, fill it in, and ask the AI to add it to your site. Five minutes, and your portfolio grows with you.</p>
-
+</section>
 </main>
-<footer><div class="wrap">Build Your Portfolio with AI</div></footer>
+<footer><div class="wrap">
+  <p class="script">Talk soon, Dr. Scruse.</p>
+  <p class="meta">Dr. Ashley Scruse · <a href="https://ashleyscruse.com/portfolio">ashleyscruse.com</a></p>
+</div></footer>
 <script>
   document.querySelectorAll('.copy').forEach(function (b) {
     b.addEventListener('click', function () {
       var t = b.parentElement.querySelector('code').innerText;
-      try {
-        navigator.clipboard.writeText(t).then(function () {
-          b.textContent = 'Copied';
-          setTimeout(function () { b.textContent = 'Copy'; }, 1500);
-        });
-      } catch (e) {}
+      try { navigator.clipboard.writeText(t).then(function () {
+        b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }); } catch (e) {}
     });
   });
+</script>
+<script>
+  document.documentElement.classList.add('js');
+  var ids = Array.prototype.map.call(document.querySelectorAll('.panel'), function (p) { return p.id; });
+  function show(id, scroll) {
+    if (ids.indexOf(id) < 0) id = ids[0];
+    ids.forEach(function (x) {
+      document.getElementById(x).hidden = x !== id;
+      document.getElementById('tab-' + x).setAttribute('aria-selected', x === id);
+    });
+    if (scroll) document.querySelector('.tabs').scrollIntoView({ behavior: 'smooth' });
+  }
+  document.querySelectorAll('.tabs button').forEach(function (b) {
+    b.addEventListener('click', function () { var id = b.getAttribute('aria-controls'); history.replaceState(null, '', '#' + id); show(id, false); });
+  });
+  document.querySelectorAll('.next').forEach(function (b) {
+    b.addEventListener('click', function () { var id = b.getAttribute('data-go'); history.replaceState(null, '', '#' + id); show(id, true); });
+  });
+  show(location.hash.slice(1), false);
 </script>
 </body>
 </html>

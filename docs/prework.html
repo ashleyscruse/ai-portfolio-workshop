@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio workshop pre-work</title>
+<meta name="description" content="Twenty minutes of setup before the Build Your Portfolio with AI workshop.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Space+Grotesk:wght@700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero"><img class="mark" src="as-mark-white.svg" alt=""><div class="wrap">
+  <p class="eyebrow">Pre-work · About 20 minutes</p>
+  <p class="script">Do this before we meet.</p>
+  <h1>Get set up. <span>Then we build.</span></h1>
+  <p class="intro">Once Claude is installed, you don't have to figure out the rest yourself: copy each prompt into Claude and let it walk you through.</p>
+</div></header>
+<main class="wrap"><section class="panel">
+  <p class="script">Six steps.</p>
+  <h2>Before the workshop.</h2>
+  <p class="lead">Bring your laptop to the session. A phone or tablet won't work.</p>
+<div class="step"><div class="num">01</div><div>
+  <h3>Get a paid Claude account</h3>
+  <p>Go to <a href="https://claude.ai"><code>claude.ai</code></a> and sign up for the <b>Pro</b> plan or higher. The free plan doesn't include the coding tool we use.</p>
+</div></div>
+
+<div class="step"><div class="num">02</div><div>
+  <h3>Install the Claude desktop app</h3>
+  <p>Download it from <a href="https://claude.ai/download"><code>claude.ai/download</code></a>, install it, and sign in. Stuck? Paste this into a chat at <a href="https://claude.ai"><code>claude.ai</code></a>:</p>
+  <div class="code"><button class="copy">Copy</button><pre><code>I'm on a [Mac / Windows] computer. Walk me through downloading, installing, and signing in to the Claude desktop app, one step at a time. Wait for me to say "done" before giving the next step.</code></pre></div>
+</div></div>
+
+<div class="step"><div class="num">03</div><div>
+  <h3>Install Node.js</h3>
+  <p>Node.js is what lets you preview your site on your own computer. Paste this into a chat in the Claude app:</p>
+  <div class="code"><button class="copy">Copy</button><pre><code>I'm on a [Mac / Windows] computer and I've never installed developer tools. Walk me through installing the LTS version of Node.js from nodejs.org, one step at a time, and wait for me to say "done" before each next step. Then show me how to check that it worked.</code></pre></div>
+</div></div>
+
+<div class="step"><div class="num">04</div><div>
+  <h3>Download the starter folder</h3>
+  <p>Go to <a href="https://github.com/ashleyscruse/portfolio-starter"><code>github.com/ashleyscruse/portfolio-starter</code></a>, click the green <b>Code</b> button, then <b>Download ZIP</b>. Unzip it somewhere easy to find, like your Desktop. You don't need a GitHub account.</p>
+</div></div>
+
+<div class="step"><div class="num">05</div><div>
+  <h3>Test it in the Code tab</h3>
+  <p>In the Claude app, open the <b>Code</b> tab and choose your unzipped <code>portfolio-starter</code> folder. Then paste:</p>
+  <div class="code"><button class="copy">Copy</button><pre><code>Check that Node.js and npm are installed and tell me the versions. Then run npm install and npm run dev in this folder, and tell me the address to open in my browser. Do not change any files. If anything fails, explain it in plain words and tell me what to do.</code></pre></div>
+  <div class="heads-up">If you see a page in your browser, it works. One more step.</div>
+</div></div>
+
+<div class="step"><div class="num">06</div><div>
+  <h3>Fill your folder</h3>
+  <p>Drag a headshot and any project images (posters, charts, screenshots) into the <code>images</code> folder inside <code>portfolio-starter</code>. Then, in the Code tab, paste:</p>
+  <div class="code"><button class="copy">Copy</button><pre><code>Read SETUP.md and walk me through it, one question at a time.</code></pre></div>
+  <p>Claude interviews you and fills in the files. Have your résumé or a short bio handy to paste; it goes faster.</p>
+  <div class="heads-up">You're done when your folder has your bio basics, a headshot, and at least one project. Nothing in it goes public unless you choose to publish later, but leave out your phone number, home address, student ID, and birthday anyway.</div>
+</div></div>
+</section></main>
+<footer><div class="wrap">
+  <p class="script">See you at the workshop.</p>
+  <p class="meta">Dr. Ashley Scruse · <a href="https://ashleyscruse.com/portfolio">ashleyscruse.com</a></p>
+</div></footer>
+<script>
+  document.querySelectorAll('.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.parentElement.querySelector('code').innerText;
+      try { navigator.clipboard.writeText(t).then(function () {
+        b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }); } catch (e) {}
+    });
+  });
+</script>
+</body>
+</html>
