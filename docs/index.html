@@ -21,9 +21,11 @@
 <nav class="tabs" role="tablist" aria-label="Workshop sections"><div class="wrap">
     <button role="tab" id="tab-setup" aria-controls="setup" aria-selected="false">Setup</button>
     <button role="tab" id="tab-folder" aria-controls="folder" aria-selected="false">The folder</button>
+    <button role="tab" id="tab-examples" aria-controls="examples" aria-selected="false">Examples</button>
     <button role="tab" id="tab-prompts" aria-controls="prompts" aria-selected="false">Prompts</button>
+    <button role="tab" id="tab-grow" aria-controls="grow" aria-selected="false">Keep it growing</button>
     <button role="tab" id="tab-tips" aria-controls="tips" aria-selected="false">Context tips</button>
-    <button role="tab" id="tab-publish" aria-controls="publish" aria-selected="false">Put it online</button>
+    <button role="tab" id="tab-publish" aria-controls="publish" aria-selected="false">Go live</button>
     <button role="tab" id="tab-stuck" aria-controls="stuck" aria-selected="false">Stuck?</button>
 </div></nav>
 <main class="wrap">
@@ -62,6 +64,24 @@
   <p><b>b.</b> Open <code>context/style.md</code> and change anything you don't like.</p>
   <p><b>c.</b> Make sure <code>projects/</code> has at least one project file and <code>images/</code> has your headshot.</p>
   <div class="heads-up">Skipped the pre-work? In the Code tab, paste <code>Read SETUP.md and walk me through it, one question at a time.</code> and Claude will fill your folder with you.</div>
+</div></div>
+  <button class="next" data-go="examples">Next: Examples →</button>
+</section>
+<section class="panel" id="examples" role="tabpanel" aria-labelledby="tab-examples">
+  <p class="script">Borrow ideas, not code.</p>
+  <h2>Find a site you like.</h2>
+  <p class="lead">Before the AI builds anything, decide what you want it to look like. Looking at real portfolios is the fastest way to find out.</p>
+<div class="step"><div class="num">04</div><div>
+  <h3>Browse real portfolios (5 minutes)</h3>
+  <p>Open the list below and click through a few. Pick one or two whose layout, colors, or feel you like.</p>
+  <p><a href="https://github.com/emmabostian/developer-portfolios">github.com/emmabostian/developer-portfolios</a>: hundreds of real developer portfolios, A to Z.</p>
+  <p><a href="https://ashleyscruse.com/portfolio">ashleyscruse.com/portfolio</a>: mine, built from the same kind of folder you have open.</p>
+</div></div>
+
+<div class="step"><div class="num">05</div><div>
+  <h3>Write down what you like</h3>
+  <p>Describe what you like in words, and the AI turns it into rules in your style file. Say what you like about the site, not "make it look exactly like this."</p>
+  <div class="code"><button class="copy">Copy</button><pre><code>I like the look of [paste a link]. What I like about it: [the layout / the colors / the fonts / how the projects are shown]. Update the Look section of context/style.md to describe that style in plain words. Do not copy any of their text or code, and do not build anything yet.</code></pre></div>
 </div></div>
   <button class="next" data-go="prompts">Next: Prompts →</button>
 </section>
@@ -116,6 +136,22 @@
   <p>Make the AI audit its own work against your rules before the world sees it.</p>
   <div class="code"><button class="copy">Copy</button><pre><code>Review index.html against AGENTS.md. List every rule it breaks and every fact on the page that is not backed by a file in context/ or projects/. Do not fix anything yet; just list them.</code></pre></div>
 </div></div>
+  <button class="next" data-go="grow">Next: Keep it growing →</button>
+</section>
+<section class="panel" id="grow" role="tabpanel" aria-labelledby="tab-grow">
+  <p class="script">Five minutes, any time.</p>
+  <h2>Add a project.</h2>
+  <p class="lead">Your site is built from your files, so updating it means adding a file. You never have to edit the website by hand.</p>
+<div class="step"><div class="num">01</div><div>
+  <h3>Make a new project file</h3>
+  <p>Copy <code>projects/_template.md</code>, rename it for the project (like <code>projects/summer-research-poster.md</code>), and fill it in. Drag any images into <code>images/</code> and list them in the file.</p>
+</div></div>
+
+<div class="step"><div class="num">02</div><div>
+  <h3>Ask Claude to add it</h3>
+  <div class="code"><button class="copy">Copy</button><pre><code>I added @projects/[new-file].md. Add it to the Projects section of the site, matching how the other projects are shown, and follow every rule in AGENTS.md. Change nothing else on the page.</code></pre></div>
+  <p>Do this every time you finish something: a poster, a class project, a summer program, an internship. Your portfolio grows with you.</p>
+</div></div>
   <button class="next" data-go="tips">Next: Context tips →</button>
 </section>
 <section class="panel" id="tips" role="tabpanel" aria-labelledby="tab-tips">
@@ -137,12 +173,46 @@
   <button class="next" data-go="publish">Next: Put it online →</button>
 </section>
 <section class="panel" id="publish" role="tabpanel" aria-labelledby="tab-publish">
-  <p class="script">When you're ready.</p>
-  <h2>Share your site.</h2>
-  <p class="lead">Your site works on your computer today. When you're ready to share it, a free GitHub account puts it on the web.</p>
-<div class="code"><button class="copy">Copy</button><pre><code>I want to publish this folder as a free website with GitHub Pages. I [have / don't have] a GitHub account. Walk me through it one step at a time, and wait for me to say "done" before each next step.</code></pre></div>
-<h3 style="margin-top:36px">After today</h3>
-<p>Every time you finish something (a poster, a class project, a summer program), copy <code>projects/_template.md</code>, fill it in, and ask the AI to add it to your site. Five minutes, and your portfolio grows with you.</p>
+  <p class="script">After the workshop.</p>
+  <h2>Put your site on the web.</h2>
+  <p class="lead">Your site works on your computer today. These steps put it online for anyone to see, for free.</p>
+  <div class="heads-up"><b>Not part of today's session.</b> Do this on your own when your site is ready. Paste any step into Claude if you want it to walk you through.</div>
+
+<div class="step"><div class="num">01</div><div>
+  <h3>Get your name as a domain (recommended)</h3>
+  <p>A domain like <code>yourname.com</code> is yours for as long as you renew it, and it looks professional on a résumé. Search for your name at a domain registrar such as Namecheap, Porkbun, or Cloudflare, or buy it directly in Vercel in step 04. Most names cost roughly $10 to $20 a year.</p>
+  <p>Not ready to buy one? Skip this step. Vercel gives you a free address like <code>yourname.vercel.app</code>.</p>
+</div></div>
+
+<div class="step"><div class="num">02</div><div>
+  <h3>Make a free GitHub account</h3>
+  <p>Sign up at <a href="https://github.com/signup">github.com</a>. GitHub stores your folder online and keeps a history of every change.</p>
+</div></div>
+
+<div class="step"><div class="num">03</div><div>
+  <h3>Push your folder to GitHub</h3>
+  <div class="code"><button class="copy">Copy</button><pre><code>I want to put this folder on GitHub as a new repository named portfolio. I have a GitHub account but I've never used git. Walk me through it one step at a time and wait for me to say "done" before each next step. Before anything is uploaded, check that no file contains a phone number, home address, student ID, or birthday.</code></pre></div>
+</div></div>
+
+<div class="step"><div class="num">04</div><div>
+  <h3>Deploy it on Vercel</h3>
+  <p><b>a.</b> Go to <a href="https://vercel.com/signup">vercel.com</a> and sign up with your GitHub account. The free Hobby plan covers a personal portfolio.</p>
+  <p><b>b.</b> Click <b>Add New</b>, then <b>Project</b>, and import your <code>portfolio</code> repository.</p>
+  <p><b>c.</b> Set <b>Framework Preset</b> to <b>Other</b>, leave the build settings empty, and click <b>Deploy</b>.</p>
+  <p><b>d.</b> In about a minute, Vercel gives you a live address. Open it on your phone to check it.</p>
+</div></div>
+
+<div class="step"><div class="num">05</div><div>
+  <h3>Connect your domain</h3>
+  <p>In your Vercel project, go to <b>Settings</b>, then <b>Domains</b>, and add your domain. Vercel shows the DNS records to copy into your registrar's settings. It can take a few minutes to a few hours to start working.</p>
+  <div class="code"><button class="copy">Copy</button><pre><code>I bought [yourname.com] from [registrar] and want it to point to my Vercel project. Walk me through adding the DNS records one step at a time, and wait for me to say "done" before each next step.</code></pre></div>
+</div></div>
+
+<div class="step"><div class="num">06</div><div>
+  <h3>Updating from now on</h3>
+  <p>Add a project file, ask Claude to update the site, then ask it to push the change to GitHub. Vercel sees the push and updates your live site on its own.</p>
+  <div class="code"><button class="copy">Copy</button><pre><code>Commit my changes with a short message describing what changed, and push them to GitHub.</code></pre></div>
+</div></div>
   <button class="next" data-go="stuck">Next: Stuck? →</button>
 </section>
 <section class="panel" id="stuck" role="tabpanel" aria-labelledby="tab-stuck">
