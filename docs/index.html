@@ -22,9 +22,9 @@
     <button role="tab" id="tab-setup" aria-controls="setup" aria-selected="false">Setup</button>
     <button role="tab" id="tab-folder" aria-controls="folder" aria-selected="false">The folder</button>
     <button role="tab" id="tab-examples" aria-controls="examples" aria-selected="false">Examples</button>
+    <button role="tab" id="tab-tips" aria-controls="tips" aria-selected="false">Context tips</button>
     <button role="tab" id="tab-prompts" aria-controls="prompts" aria-selected="false">Prompts</button>
     <button role="tab" id="tab-grow" aria-controls="grow" aria-selected="false">Keep it growing</button>
-    <button role="tab" id="tab-tips" aria-controls="tips" aria-selected="false">Context tips</button>
     <button role="tab" id="tab-publish" aria-controls="publish" aria-selected="false">Go live</button>
     <button role="tab" id="tab-stuck" aria-controls="stuck" aria-selected="false">Stuck?</button>
 </div></nav>
@@ -54,7 +54,7 @@
 <tr><td><code>AGENTS.md</code></td><td>Standing instructions: what the project is, where things are, the rules. Read it now; you can change any rule.</td></tr>
 <tr><td><code>context/about-me.md</code></td><td>Facts about you. The AI is told to use only these, so it can't make things up.</td></tr>
 <tr><td><code>context/style.md</code></td><td>How the site should look and sound.</td></tr>
-<tr><td><code>projects/</code></td><td>One file per project, all the same shape. Copy <code>_template.md</code> for each new one.</td></tr>
+<tr><td><code>projects/</code></td><td>One file per project, all the same shape. Claude makes new ones from <code>_template.md</code>.</td></tr>
 <tr><td><code>images/</code></td><td>Your photos and charts, named for what they show.</td></tr>
 </table>
 
@@ -83,6 +83,24 @@
   <p>Describe what you like in words, and the AI turns it into rules in your style file. Say what you like about the site, not "make it look exactly like this."</p>
   <div class="code"><button class="copy">Copy</button><pre><code>I like the look of [paste a link]. What I like about it: [the layout / the colors / the fonts / how the projects are shown]. Update the Look section of context/style.md to describe that style in plain words. Do not copy any of their text or code, and do not build anything yet.</code></pre></div>
 </div></div>
+  <button class="next" data-go="tips">Next: Context tips →</button>
+</section>
+<section class="panel" id="tips" role="tabpanel" aria-labelledby="tab-tips">
+  <p class="script">Worth keeping.</p>
+  <h2>How to get good results.</h2>
+  <p class="lead">People who get great results from AI aren't better at typing prompts. They're better at organizing what the AI reads.</p>
+<ol class="tips">
+<li><span><b>Write it down once, point to it forever.</b> If you've typed the same explanation twice, it belongs in a file.</span></li>
+<li><span><b>Same shape every time.</b> Every project file has the same headings, so the AI (and you) can find anything.</span></li>
+<li><span><b>Name things for what they are.</b> <code>water-quality-chart.png</code> tells the AI what it is. <code>IMG_2041.png</code> tells it nothing.</span></li>
+<li><span><b>Point only at what the job needs.</b> More context isn't better; the right context is. Use <code>@</code> to point at one or two files.</span></li>
+<li><span><b>One job per chat.</b> When the AI gets confused or starts going in circles, start a new session. It rereads your files and starts clean.</span></li>
+<li><span><b>Plan, then build.</b> Ask for the plan first. Fixing a plan takes one sentence; fixing a website takes ten prompts.</span></li>
+<li><span><b>Make it ask, not guess.</b> "Ask me" and "leave a TODO" are the two most useful phrases you have.</span></li>
+<li><span><b>Save decisions to a file.</b> The chat forgets. <code>AGENTS.md</code> doesn't.</span></li>
+<li><span><b>Read before you approve.</b> You're the editor. If you can't explain a change, ask the AI to explain it or undo it.</span></li>
+<li><span><b>Save points.</b> When something works, ask Claude to save a backup copy of your folder. If the next change breaks everything, you can go back.</span></li>
+</ol>
   <button class="next" data-go="prompts">Next: Prompts →</button>
 </section>
 <section class="panel" id="prompts" role="tabpanel" aria-labelledby="tab-prompts">
@@ -141,36 +159,19 @@
 <section class="panel" id="grow" role="tabpanel" aria-labelledby="tab-grow">
   <p class="script">Five minutes, any time.</p>
   <h2>Add a project.</h2>
-  <p class="lead">Your site is built from your files, so updating it means adding a file. You never have to edit the website by hand.</p>
+  <p class="lead">Your site is built from your files, so updating it means adding a file. You never edit the website by hand; you ask Claude.</p>
 <div class="step"><div class="num">01</div><div>
-  <h3>Make a new project file</h3>
-  <p>Copy <code>projects/_template.md</code>, rename it for the project (like <code>projects/summer-research-poster.md</code>), and fill it in. Drag any images into <code>images/</code> and list them in the file.</p>
+  <h3>Have Claude make the project file</h3>
+  <p>If you have images for the project, drag them into the <code>images/</code> folder first. Then paste:</p>
+  <div class="code"><button class="copy">Copy</button><pre><code>I want to add a new project. Make a new file in projects/ from projects/_template.md, named for the project. Interview me to fill it in, one question at a time, and list any images I added to images/. Show me the file before you save it.</code></pre></div>
 </div></div>
 
 <div class="step"><div class="num">02</div><div>
-  <h3>Ask Claude to add it</h3>
-  <div class="code"><button class="copy">Copy</button><pre><code>I added @projects/[new-file].md. Add it to the Projects section of the site, matching how the other projects are shown, and follow every rule in AGENTS.md. Change nothing else on the page.</code></pre></div>
+  <h3>Ask Claude to add it to the site</h3>
+  <div class="code"><button class="copy">Copy</button><pre><code>Add the new project file to the Projects section of the site, matching how the other projects are shown, and follow every rule in AGENTS.md. Change nothing else on the page.</code></pre></div>
   <p>Do this every time you finish something: a poster, a class project, a summer program, an internship. Your portfolio grows with you.</p>
 </div></div>
-  <button class="next" data-go="tips">Next: Context tips →</button>
-</section>
-<section class="panel" id="tips" role="tabpanel" aria-labelledby="tab-tips">
-  <p class="script">Worth keeping.</p>
-  <h2>How to get good results.</h2>
-  <p class="lead">People who get great results from AI aren't better at typing prompts. They're better at organizing what the AI reads.</p>
-<ol class="tips">
-<li><b>Write it down once, point to it forever.</b> If you've typed the same explanation twice, it belongs in a file.</li>
-<li><b>Same shape every time.</b> Every project file has the same headings, so the AI (and you) can find anything.</li>
-<li><b>Name things for what they are.</b> <code>water-quality-chart.png</code> tells the AI what it is. <code>IMG_2041.png</code> tells it nothing.</li>
-<li><b>Point only at what the job needs.</b> More context isn't better; the right context is. Use <code>@</code> to point at one or two files.</li>
-<li><b>One job per chat.</b> When the AI gets confused or starts going in circles, start a new session. It rereads your files and starts clean.</li>
-<li><b>Plan, then build.</b> Ask for the plan first. Fixing a plan takes one sentence; fixing a website takes ten prompts.</li>
-<li><b>Make it ask, not guess.</b> "Ask me" and "leave a TODO" are the two most useful phrases you have.</li>
-<li><b>Save decisions to a file.</b> The chat forgets. <code>AGENTS.md</code> doesn't.</li>
-<li><b>Read before you approve.</b> You're the editor. If you can't explain a change, ask the AI to explain it or undo it.</li>
-<li><b>Save points.</b> When something works, make a copy of your folder. If the next change breaks everything, you can go back.</li>
-</ol>
-  <button class="next" data-go="publish">Next: Put it online →</button>
+  <button class="next" data-go="publish">Next: Go live →</button>
 </section>
 <section class="panel" id="publish" role="tabpanel" aria-labelledby="tab-publish">
   <p class="script">After the workshop.</p>
